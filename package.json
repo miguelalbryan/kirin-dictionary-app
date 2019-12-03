@@ -1,0 +1,54 @@
+{
+  "name": "kirin-dictionary-app",
+  "version": "1.0.0",
+  "description": "HackerYou Fullstack Masterclass Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "react-scripts test",
+    "start:server": "nodemon api/server.js --ignore src/ --ignore build/ --ignore public/",
+    "start:client": "react-scripts start",
+    "build:client": "react-scripts build",
+    "git": "node scripts/git.js miguelalbryan kirin-dictionary-app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguelalbryan/kirin-dictionary-app.git"
+  },
+  "keywords": [],
+  "author": "Bryan Miguel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HackerYou/con-ed-full-stack/issues"
+  },
+  "homepage": "https://github.com/HackerYou/con-ed-full-stack#readme",
+  "dependencies": {
+    "@material-ui/core": "^4.7.0",
+    "compromise": "^11.14.3",
+    "eslint": "^6.6.0",
+    "express": "^4.17.1",
+    "init-package-json": "^1.10.3",
+    "jishon": "^0.1.1",
+    "mongoose": "^5.7.10",
+    "nodemon": "^1.19.4",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.2.0",
+    "word-definition": "^2.1.6"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "proxy": "http://localhost:4000",
+  "standard": {
+    "ignore": [
+      "build/**"
+    ]
+  },
+  "devDependencies": {
+    "standard": "^12.0.1"
+  }
+}
