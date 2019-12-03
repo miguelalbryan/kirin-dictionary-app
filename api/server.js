@@ -20,7 +20,10 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
 // 5. Utilise routes
+const publicPath = path.resolve(__dirname, '..','build')
+router.use('/',express.static(publicPath))
 router.use('/api/words', wordRoutes);
+
 
 // 6. Create a server from express instance
 const server = http.createServer(router);
