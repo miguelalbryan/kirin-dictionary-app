@@ -23,7 +23,8 @@ class Content extends Component{
                                             
                         <MyContext.Consumer>
                         {context => (
-                            console.log(context)
+                           console.log()
+                           
                         )}
                         </MyContext.Consumer>
                         </div>
