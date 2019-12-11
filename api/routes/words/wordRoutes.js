@@ -50,9 +50,8 @@ router.route('/search/:searchWord')
     if (wordResults){
         wordResults.forEach((element, index, array) => {
             element.type = wordService.searchWordType(element.meanings[0].english.split(';')[0])
-            
         });
-
+        console.log(wordResults)
 
         res.json(wordResults)
 

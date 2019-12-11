@@ -4,11 +4,12 @@ const Word = require('./wordModel')
 const jishon = require('jishon')
 const nlp = require('compromise')
 const wd = require('word-definition')
+
+
 //Helper function to list each words in the data base
 exports.listWordBank = async() =>{
     try{
         const words = Word.find({});
-        console.log(words)
         return words
     }catch(e){
         throw e;
@@ -33,14 +34,13 @@ exports.saveWord = async (wordData) =>{
 exports.searchWord = async (words) =>{
 const results = await jishon(words, (error, response) => {
 })
-
-return results.words.splice(0,2)
+//You can send results.words.sentences as well if you want sample sentences for the words   
+return results.words.splice(0,5)
 }
 
 exports.searchWordType = async (word)=>
 {
 // console.log(word)
-const data = await nlp(word).normalize().out('tags')
 
 // console.log(data)
 
