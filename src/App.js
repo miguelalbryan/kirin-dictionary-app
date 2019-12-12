@@ -11,6 +11,7 @@ import Sidebar from './components/Sidebar';
 import Topbar from './components/Topbar';
 
 import Content from './components/Content';
+import wordOfTheDay from './components/wordOfTheDay';
 import SearchResults from './components/SearchResults';
 import PageNotFound from './components/PageNotFound';
 
@@ -35,8 +36,10 @@ class App extends Component{
                                   <Switch>
                                             <Route exact path="/" component={Content}/>
                                             <Route path="/wordBank/" component={Content}/>
+                                            <Route path="/wordOfTheDay/" component={wordOfTheDay}/>                                            
                                             <Route path={`/search/:word`} component={SearchResults}/>
                                             <Route path="/*"component={PageNotFound}/>
+                                            
                                   </Switch>
                                   </div>
 

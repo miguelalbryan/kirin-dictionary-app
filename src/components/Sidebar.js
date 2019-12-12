@@ -36,21 +36,16 @@ class Sidebar extends Component{
           <div className="bg-white py-2 collapse-inner rounded">
             <h6 className="collapse-header">Category:</h6>
             <a className="collapse-item" href="/wordBank/category/all">All</a> {/*This is where you can make a collapsable item active*/}
-            <a className="collapse-item" href="/">Verbs</a>
           </div>
         </div>
       </li>
 
       
       {/* <!-- Nav Item - Tables --> */}
-      <li className="nav-item">
-        <a className="nav-link" href="tables.html">
-          <i className="fas fa-fw fa-table"></i>
-          <span>Phrases</span></a>
-      </li>
+
       {/* <!-- Nav Item - Tables --> */}
       <li className="nav-item">
-        <a className="nav-link" href="tables.html">
+        <a className="nav-link" href="/wordOfTheDay">
           <i className="fas fa-fw fa-table"></i>
           <span>Word of the Day</span></a>
       </li>

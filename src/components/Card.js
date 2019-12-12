@@ -13,7 +13,7 @@ class Card extends Component{
                     <div className="card shadow mb-4">
                             {/* <!-- Card Header - Accordion --> */}
                             <a href={"#collapseCardExample"+this.props.word} className="d-block card-header py-3 d-flex flex-row align-items-center justify-content-between" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="collapseCardExample">
-    <h6 className="m-0 font-weight-bold text-primary">{this.props.word}{this.props.furigana ? '('+this.props.furigana+')' : null}</h6>
+        <h6 className="m-0 font-weight-bold text-primary">{this.props.word}{this.props.furigana ? '('+this.props.furigana+')' : null}</h6>
                             </a>
 
                             {/* <!-- Card Header - Dropdown --> */}
@@ -35,12 +35,19 @@ class Card extends Component{
                             <MyContext.Consumer>
                                             {({searchResults,saveWord}) => {
                                                     if(searchResults){
-                                                        return  <a className="dropdown-item" href="/" onClick={e=>{{e.preventDefault();saveWord(searchResults[this.props.index])}}}>Save</a>
+                                                        return  <a className="dropdown-item" href="/" onClick={e=>{{e.preventDefault();alert(this.props.word+' has been added to the wordBank');saveWord(searchResults[this.props.index])}}}>Save</a>
                                                         }
                                                 }}
-                        </MyContext.Consumer>
+                            </MyContext.Consumer>
                             <div className="dropdown-divider"></div>
-                            <a className="dropdown-item" href="/" onClick={e=>{{e.preventDefault();}}}>Delete</a>
+                            <MyContext.Consumer>
+                                            {({searchResults,deleteWord}) => {
+                                                    if(searchResults){
+                                                        return <a className="dropdown-item" href="/" onClick={e=>{{e.preventDefault();alert(this.props.word+' has been deleted from the wordBank');deleteWord(this.props.id)}}}>Delete</a>
+
+                                                        }
+                                                }}
+                            </MyContext.Consumer>
                                     
                             </div>
                         </div>

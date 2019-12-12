@@ -31,6 +31,13 @@ exports.saveWord = async (wordData) =>{
     }
 }
 
+exports.deleteWord = async (wordData) =>{
+    try{
+    }catch(e){
+
+    }
+}
+
 exports.searchWord = async (words) =>{
 const results = await jishon(words, (error, response) => {
 })

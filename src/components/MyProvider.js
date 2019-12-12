@@ -64,12 +64,32 @@ class MyProvider extends Component {
         }
     }
 
+    async deleteWord(word){
+        console.log(word)
+        if(word){
+            try{
+                const response = await fetch('/api/words/',{
+                    method:'DELETE',
+                    body: JSON.stringify(word),
+                    headers:{
+                        'Content-Type':'application/json',
+                    }
+                })
+
+                const {data} = await response.json()
+            }catch(e){
+
+            }
+        }
+    }
+
     render() {
         return (
             <MyContext.Provider
             value={{wordBank: this.state.wordBank,
                     searchResults: this.state.searchResults,
-            saveWord: word=>{this.saveWord(word)}        ,
+            saveWord: word=>{this.saveWord(word)},
+            deleteWord: word=>{this.deleteWord(word)},
             searchWord: word =>{this.searchWord(word)}
         }}>
                 {this.props.children}

@@ -39,6 +39,16 @@ router.route('/')
             next(e);
         }
     })
+    .delete(async (req,res,next)=>{
+        const {wordData} = req.body;
+        console.log({wordData})
+        try{
+            const word = await wordService.deleteWord(wordData)
+            console.log(wordData)
+        }catch(e){
+            next(e)
+        }
+    })
 
 router.route('/search/:searchWord')
 .get(async (req,res)=>{
