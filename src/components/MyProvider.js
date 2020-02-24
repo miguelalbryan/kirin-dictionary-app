@@ -44,6 +44,7 @@ class MyProvider extends Component {
     }
   
     async saveWord(wordData){
+        console.log(wordData)
         if(wordData){
             try{
                 const response = await fetch('/api/words/',{
@@ -64,13 +65,13 @@ class MyProvider extends Component {
         }
     }
 
-    async deleteWord(word){
-        console.log(word)
-        if(word){
+    async deleteWord(wordData){
+        console.log(wordData)
+        if(wordData){
             try{
                 const response = await fetch('/api/words/',{
                     method:'DELETE',
-                    body: JSON.stringify(word),
+                    body: JSON.stringify({wordData}),
                     headers:{
                         'Content-Type':'application/json',
                     }

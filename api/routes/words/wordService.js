@@ -32,7 +32,11 @@ exports.saveWord = async (wordData) =>{
 }
 
 exports.deleteWord = async (wordData) =>{
+    //1. NSIW Create a word in instance 
     try{
+        const word = await Word.deleteOne(({ "_id" : ObjectId(wordData)}))
+        return word
+    //2. Delete word from database
     }catch(e){
 
     }

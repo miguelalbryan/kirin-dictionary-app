@@ -41,7 +41,6 @@ router.route('/')
     })
     .delete(async (req,res,next)=>{
         const {wordData} = req.body;
-        console.log({wordData})
         try{
             const word = await wordService.deleteWord(wordData)
             console.log(wordData)
@@ -61,7 +60,6 @@ router.route('/search/:searchWord')
         wordResults.forEach((element, index, array) => {
             element.type = wordService.searchWordType(element.meanings[0].english.split(';')[0])
         });
-        console.log(wordResults)
 
         res.json(wordResults)
 

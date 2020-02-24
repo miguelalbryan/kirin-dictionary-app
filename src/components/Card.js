@@ -35,7 +35,7 @@ class Card extends Component{
                             <MyContext.Consumer>
                                             {({searchResults,saveWord}) => {
                                                     if(searchResults){
-                                                        return  <a className="dropdown-item" href="/" onClick={e=>{{e.preventDefault();alert(this.props.word+' has been added to the wordBank');saveWord(searchResults[this.props.index])}}}>Save</a>
+                                                        return  <a className="dropdown-item" href="/" onClick={e=>{e.preventDefault();alert(this.props.word+' has been added to the wordBank');saveWord(searchResults[this.props.index])}}>Save</a>
                                                         }
                                                 }}
                             </MyContext.Consumer>
@@ -43,7 +43,7 @@ class Card extends Component{
                             <MyContext.Consumer>
                                             {({searchResults,deleteWord}) => {
                                                     if(searchResults){
-                                                        return <a className="dropdown-item" href="/" onClick={e=>{{e.preventDefault();alert(this.props.word+' has been deleted from the wordBank');deleteWord(this.props.id)}}}>Delete</a>
+                                                        return <a className="dropdown-item" href="/" onClick={e=>{e.preventDefault();alert(this.props.word+' has been deleted from the wordBank');deleteWord(this.props.id)}}>Delete</a>
 
                                                         }
                                                 }}
