@@ -2,7 +2,10 @@
 
 const Word = require('./wordModel')
 const jishon = require('jishon')
+
+// Although I see that the docs for compromise use "nlp" we should probably use a more descriptive name
 const nlp = require('compromise')
+// Same here, we should prefer a name like wordDefinition to wd
 const wd = require('word-definition')
 //Helper function to list each words in the data base
 exports.listWordBank = async() =>{
@@ -11,6 +14,7 @@ exports.listWordBank = async() =>{
         console.log(words)
         return words
     }catch(e){
+        // If you're catching an error only to throw it again, you can just remove the try/catch and it will do the same thing + be more readable
         throw e;
     }
 }
